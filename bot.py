@@ -29,15 +29,16 @@ async def toss_a_coin(ctx, number_of_tosses=""):
 			result.append(random.choice([1, 0]))
 		await ctx.send("Result of {} coin tosses:\nNumber of Heads: {}, {:.3f}%\nNumber of Tails: {}, {:.3f}%".format(number_of_tosses, sum(result), sum(result)/number_of_tosses * 100, number_of_tosses - sum(result), (number_of_tosses - sum(result))/number_of_tosses * 100))
 
+"""
 @bot.command(name="spam")
 async def spam(ctx, *args):
 	if args == []:
 		await ctx.send("No message to spam")
 		return
-
 	for x in range(0, 10):
 		await ctx.send(" ".join(args))
 		time.sleep(0.4)
+"""
 
 @bot.command(name="echo")
 async def echo(ctx, *args):
