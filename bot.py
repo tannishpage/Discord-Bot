@@ -7,8 +7,7 @@ import random
 import time
 
 load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
-
+TOKEN = os.environ.get("DISCORD_TOKEN")
 #client = discord.Client()
 bot = commands.Bot(command_prefix="!")
 
@@ -47,7 +46,10 @@ async def echo(ctx, *args):
 		return
 
 	await ctx.send(" ".join(args))
-	
+
+@bot.command(name="vote")
+async def vote(ctx, *args):
+    pass
 
 @bot.event
 async def on_message(message):
